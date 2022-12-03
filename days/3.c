@@ -12,7 +12,7 @@ int get_index_from(char type) {
   return (is_lower ? type - 'a' : type - 'A' + UPPER_OFFSET) + 1;
 }
 
-compartment_t get_compartment_elements_from(char *types, int length) {
+compartment_t get_compartment_elements_from(char *types, size_t length) {
   compartment_t c = 0;
 
   for (int i = 0; i < length; i++) {
@@ -37,7 +37,7 @@ int main_a(file_t *f) {
   int priority_sum = 0;
 
   while (load_line(f)) {
-    int compartment_size = (f->read - 1) / 2;
+    size_t compartment_size = (f->read - 1) / 2;
 
     compartment_t fst_half = get_compartment_elements_from(f->line, compartment_size);
     compartment_t scd_half = get_compartment_elements_from(&f->line[compartment_size], compartment_size);
@@ -59,14 +59,14 @@ int main_b(file_t *f) {
   int priority_sum = 0;
 
   int group_member = 0;
-  compartment_t rolling_compartment = (compartment_t) ~0;
+  compartment_t rolling_compartment = ~0;
   while (load_line(f)) {
 
     rolling_compartment &= get_compartment_elements_from(f->line, f->read - 1);
 
     if (group_member++ % GROUP_SIZE == GROUP_SIZE - 1) {
       priority_sum += get_priority_from(rolling_compartment);
-      rolling_compartment = (compartment_t) ~0;
+      rolling_compartment = ~0;
     }
   }
 
