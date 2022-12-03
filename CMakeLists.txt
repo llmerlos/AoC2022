@@ -4,7 +4,7 @@ project(AoC2022 C)
 set(CMAKE_C_STANDARD 23)
 
 # Common
-add_library(aoc_common INTERFACE utils/bit_print.h)
+add_library(aoc_common INTERFACE)
 
 target_sources(aoc_common INTERFACE
         main.c
