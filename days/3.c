@@ -1,7 +1,6 @@
 //
 // Created by Lluís Merlos Pieri on 3/12/22.
 //
-#include "bit_print.h"
 #include "file_reader.h"
 
 #define UPPER_OFFSET ('Z' - 'A' + 1)
