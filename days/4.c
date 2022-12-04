@@ -8,7 +8,7 @@ typedef struct {
   ssize_t max;
 } range_t;
 
-ssize_t find_char_and_replace_in(char * str, size_t len, char token, char replacement) {
+ssize_t find_char_and_replace_in(char *str, size_t len, char token, char replacement) {
   for (size_t i = 0; i < len; i++) {
     if (str[i] == token) {
       str[i] = replacement;
@@ -18,12 +18,11 @@ ssize_t find_char_and_replace_in(char * str, size_t len, char token, char replac
   return -1;
 }
 
-range_t get_range_from(char * str, size_t len) {
+range_t get_range_from(char *str, size_t len) {
   ssize_t separator_loc = find_char_and_replace_in(str, len, '-', '\n');
   range_t range = {
     .min = atoi(str),
-    .max = atoi(&str[separator_loc + 1])
-  };
+    .max = atoi(&str[separator_loc + 1])};
 
   return range;
 }
@@ -55,7 +54,7 @@ int main_a(file_t *f) {
 // PART B
 //
 
-bool is_in_range(ssize_t value, range_t range){
+bool is_in_range(ssize_t value, range_t range) {
   return (value >= range.min && value <= range.max);
 }
 
