@@ -90,12 +90,6 @@ int main_a(file_t *f) {
       crane_movement_t mvt = get_movement_from(f->line);
 
       apply_movement_to_a(crane, mvt);
-      for (int i = 0; i < MAX_COLS; i++) {
-        crate_t *crate = crane[i];
-        while (crate->child != NULL) {
-          crate = crate->child;
-        }
-      }
     }
   }
 
@@ -148,12 +142,6 @@ int main_b(file_t *f) {
       crane_movement_t mvt = get_movement_from(f->line);
 
       apply_movement_to_b(crane, mvt);
-      for (int i = 0; i < MAX_COLS; i++) {
-        crate_t *crate = crane[i];
-        while (crate->child != NULL) {
-          crate = crate->child;
-        }
-      }
     }
   }
 
