@@ -5,6 +5,10 @@
 
 int main_a(file_t *f) {
 
+  while (load_line(f)) {
+
+  }
+
   return 0;
 }
 
@@ -14,6 +18,10 @@ int main_a(file_t *f) {
 //
 
 int main_b(file_t *f) {
+  
+  while (load_line(f)) {
+
+  }
 
   return 0;
 }
