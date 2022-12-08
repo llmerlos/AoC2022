@@ -15,7 +15,7 @@ target_include_directories(aoc_common INTERFACE
 
 
 # Day executables (increase every day)
-foreach(DAY RANGE 7)
+foreach(DAY RANGE 8)
     add_executable(D_${DAY} days/${DAY}.c)
     target_link_libraries(D_${DAY} aoc_common)
     target_compile_definitions(D_${DAY} PUBLIC INPUT_PATH="../inputs/${DAY}.txt")
