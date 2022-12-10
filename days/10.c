@@ -75,7 +75,6 @@ int main_b(file_t *f) {
   crt_t crt = (crt_t){.pixels = {0}};
 
   while (load_line(f)) {
-    // noop
     if (f->line[0] == 'n') {
       clock_up_update_screen(&cpu, &crt);
     } else {
